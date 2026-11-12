@@ -1,49 +1,41 @@
 # Nafile
 
-[![Cover](cover.png)](https://nafile.ertekin.xyz)
+[![Cover](documentation/cover.png)](https://nafile.ertekin.xyz)
 
-Nafile is a modern-arabesque display typeface,
-offering a vast and versatile family with 6 widths and 5 weights, all in a variable, open-source format. The project was born in Barcelona, inspired by the city where the initial sketches came to life. I was moved by the way Barcelona’s Gothic roots, Catalan modernism, Mediterranean charm, and touches of Arabesque all blended into the city’s modern rhythm. This unique mix of influences became the heart of the typeface.
+Nafile is a modern-arabesque display typeface, offering a vast and versatile family with 6 widths and weights from Thin to Black, all in a variable, open-source format. The project was born in Barcelona, inspired by the city where the initial sketches came to life. I was moved by the way Barcelona’s Gothic roots, Catalan modernism, Mediterranean charm, and touches of Arabesque all blended into the city’s modern rhythm. This unique mix of influences became the heart of the typeface.
 
 All weights, widths, and styles of the Nafile typeface can be tested on [nafile.ertekin.xyz](https://nafile.ertekin.xyz)
 
 
 ## Building the Fonts
 
-The font is built using fontmake and gftools post processing script. Tools are all python based, so it must be previously installed.
+The source is `sources/Nafile.glyphs` (Glyphs 3). The fonts are built with [gftools builder](https://github.com/googlefonts/gftools), the same toolchain Google Fonts uses.
 
-To install all the Python tools into a virtualenv, do the following:
-
-From terminal:
-
-```
-cd your/local/project/directory
-```
-
-once in the project folder create a virtual environment. 
-This step has to be done just once, the first time:
+Set up a virtual environment once:
 
 ```
 python3 -m venv venv
-```
-
-activate the virtual environment
-
-```
 source venv/bin/activate
-```
-
-install the required dependencies
-
-```
 pip install -r requirements.txt
 ```
 
-Then run the this command:
+Then build:
 
 ```
-cd source
-sh build.sh
+gftools builder sources/config.yaml
+```
+
+Output goes to `fonts/`:
+
+- `fonts/variable`: `Nafile[wdth,wght].ttf`
+- `fonts/ttf`: static TTFs
+- `fonts/otf`: static OTFs
+- `fonts/webfonts`: WOFF2
+
+To check the fonts against Google Fonts' requirements:
+
+```
+fontbakery check-googlefonts fonts/variable/*.ttf
 ```
 
 ## License

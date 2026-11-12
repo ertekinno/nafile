@@ -1,0 +1,12 @@
+sources:
+  - Nafile.glyphs
+familyName: Nafile
+axisOrder:
+  - wdth
+  - wght
+buildVariable: true
+buildStatic: true
+buildOTF: true
+buildWebfont: true
+autohintTTF: true
+outputDir: "../fonts"

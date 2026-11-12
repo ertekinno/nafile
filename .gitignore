@@ -1,1 +1,11 @@
 .DS_Store
+venv/
+__pycache__/
+# gftools builder intermediates
+sources/build.ninja
+sources/.ninja_log
+sources/instance_ufos/
+sources/master_ufo/
+*.designspace
+# QA output
+out/

@@ -1,4 +1,6 @@
-fontmake
-git+https://github.com/googlefonts/gftools
-statmake
-brotli
+# Build and QA tools. Pinned versions are what the fonts in fonts/ were built with.
+fontmake==3.12.2
+glyphsLib==6.17.2
+fonttools[woff]==4.68.0
+gftools[qa]==0.9.996
+fontbakery[googlefonts]==1.1.0
